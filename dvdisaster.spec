@@ -37,15 +37,23 @@ This is the unofficial version from %{url}.
 
 
 %files
-%doc
-
 %{_bindir}/%{shortname}
-%{_datadir}/doc/%{shortname}-%{tag}/*
 %{_datadir}/locale/*/LC_MESSAGES/%{shortname}.mo
 %{_datadir}/man/de/man1/%{shortname}.1.gz
 %{_datadir}/man/man1/%{shortname}.1.gz
 
 %exclude %{_bindir}/%{shortname}-uninstall.sh
+
+%package doc
+Summary: Documentation for %{name}
+BuildArch: noarch
+
+%description doc
+This subpackage contains documentation files for %{name}
+
+%files doc
+%doc
+%{_datadir}/doc/%{shortname}-%{tag}/*
 
 %changelog
 %autochangelog
